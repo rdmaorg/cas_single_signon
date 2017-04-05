@@ -1,0 +1,20 @@
+@CHARSET "ISO-8859-1";
+label#password-error.error {
+float:left;
+margin:0;
+color:red;
+}
+
+label#username-error.error {
+float:left;
+margin:0;
+color:red;
+}
+
+input#username.form-control.error {
+border:1px solid red;
+}
+
+input#password.form-control.error {
+border:1px solid red;
+}

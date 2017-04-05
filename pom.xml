@@ -1,0 +1,163 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ie.clients.cas</groupId>
+	<artifactId>generic-authentication-cas</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>generic-authentication-cas</name>
+	<description>Authentication CAS</description>
+
+	<scm>
+		<connection>scm:hg:http://10.252.220.63/hg/generic-authentication-cas</connection>
+		<developerConnection>scm:hg:http://10.252.220.63/hg/generic-authentication-cas</developerConnection>
+		<url>http://10.252.220.63/hg/generic-authentication-cas</url>
+	  	<tag>HEAD</tag>
+  	</scm>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<overlays>
+						<overlay>
+							<groupId>org.jasig.cas</groupId>
+							<artifactId>cas-server-webapp</artifactId>
+							<excludes>
+								<exclude>WEB-INF/cas.properties</exclude>
+								<exclude>WEB-INF/classes/log4j.xml</exclude>
+							</excludes>
+						</overlay>
+					</overlays>
+					<webResources>
+						<resource>
+							<filtering>true</filtering>
+							<directory>src/main/webapp/WEB-INF</directory>
+							<includes>
+								<include>**/*.xml</include>
+								<include>**/*.properties</include>
+								<include>**/*.jsp</include>
+							</includes>
+							<targetPath>WEB-INF</targetPath>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <releaseProfiles>prod</releaseProfiles>
+                </configuration>
+            </plugin>
+		</plugins>
+
+		<finalName>cas</finalName>
+	</build>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jasig.cas</groupId>
+			<artifactId>cas-server-webapp</artifactId>
+			<version>${cas.version}</version>
+			<type>war</type>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jasig.cas</groupId>
+			<artifactId>cas-server-support-ldap</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>farrukh</id>
+			<properties>
+				<cas.server.host.name>localhost</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>test</id>
+			<properties>
+				<cas.server.host.name>10.252.220.65</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>uat-tmi</id>
+			<properties>
+				<cas.server.host.name>172.16.8.11</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+
+				<ldap.url>ldap://172.16.1.24</ldap.url>
+				<ldap.baseDn>dc=tmi,dc=local</ldap.baseDn>
+				<ldap.managerDn>cn=admin,dc=tmi,dc=local</ldap.managerDn>
+				<ldap.managerPassword>Password1</ldap.managerPassword>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>prod-tmi</id>
+			<properties>
+				<cas.server.host.name>172.16.1.20</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+
+				<ldap.url>ldap://localhost</ldap.url>
+				<ldap.baseDn>dc=tmi,dc=local</ldap.baseDn>
+				<ldap.managerDn>cn=admin,dc=tmi,dc=local</ldap.managerDn>
+				<ldap.managerPassword>tm1@cl1ent</ldap.managerPassword>
+			</properties>
+		</profile>
+
+	</profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>${repo.id}</id>
+            <name>release</name>
+            <url>${repo.release}</url>
+        </repository>
+        <snapshotRepository>
+            <id>${repo.id}</id>
+            <name>snapshot</name>
+            <url>${repo.snapshot}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+	<properties>
+		<cas.version>4.0.0</cas.version>
+		
+		<cas.server.host.name>localhost</cas.server.host.name>
+		<cas.server.host.port>443</cas.server.host.port>
+
+		<ldap.url>ldap://10.252.220.198</ldap.url>
+		<ldap.baseDn>dc=clients,dc=local</ldap.baseDn>
+		<ldap.managerDn>cn=admin,dc=clients,dc=local</ldap.managerDn>
+		<ldap.managerPassword>Password1</ldap.managerPassword>
+		<ldap.auth.format>uid=%s,ou=people,dc=clients,dc=local</ldap.auth.format>
+		<!--
+		<cas.server.host.name>IEDUBV5NB000393.emea.avnet.com</cas.server.host.name>
+		<cas.server.host.port>8443</cas.server.host.port>
+		-->
+
+        <repo.id>nexus-repo</repo.id>
+        <repo.release>http://linux.vm.tomcat/nexus/content/repositories/releases</repo.release>
+        <repo.snapshot>http://linux.vm.tomcat/nexus/content/repositories/snapshots</repo.snapshot>
+
+		<additionalparam>-Xdoclint:none</additionalparam>
+	</properties>
+
+</project>
