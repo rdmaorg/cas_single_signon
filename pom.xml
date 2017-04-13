@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ie.clients.cas</groupId>
 	<artifactId>generic-authentication-cas</artifactId>
@@ -11,8 +12,8 @@
 		<connection>scm:hg:http://10.252.220.63/hg/generic-authentication-cas</connection>
 		<developerConnection>scm:hg:http://10.252.220.63/hg/generic-authentication-cas</developerConnection>
 		<url>http://10.252.220.63/hg/generic-authentication-cas</url>
-	  	<tag>HEAD</tag>
-  	</scm>
+		<tag>HEAD</tag>
+	</scm>
 
 	<build>
 		<plugins>
@@ -53,11 +54,11 @@
 				</configuration>
 			</plugin>
 			<plugin>
-                <artifactId>maven-release-plugin</artifactId>
-                <configuration>
-                    <releaseProfiles>prod</releaseProfiles>
-                </configuration>
-            </plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<releaseProfiles>prod</releaseProfiles>
+				</configuration>
+			</plugin>
 		</plugins>
 
 		<finalName>cas</finalName>
@@ -72,16 +73,37 @@
 			<type>war</type>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- LDAP Authentication -->
 		<dependency>
 			<groupId>org.jasig.cas</groupId>
 			<artifactId>cas-server-support-ldap</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
+
+		<!-- Database Authentication -->
+		<dependency>
+			<groupId>org.jasig.cas</groupId>
+			<artifactId>cas-server-support-jdbc</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1.2</version>
+		</dependency>
+
+		<!-- Include the required driver based on the client profile -->
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901.jdbc4</version>
+		</dependency>
+
 	</dependencies>
 
 	<profiles>
 		<profile>
-			<id>farrukh</id>
+			<id>dev</id>
 			<properties>
 				<cas.server.host.name>localhost</cas.server.host.name>
 				<cas.server.host.port>443</cas.server.host.port>
@@ -124,38 +146,51 @@
 
 	</profiles>
 
-    <distributionManagement>
-        <repository>
-            <id>${repo.id}</id>
-            <name>release</name>
-            <url>${repo.release}</url>
-        </repository>
-        <snapshotRepository>
-            <id>${repo.id}</id>
-            <name>snapshot</name>
-            <url>${repo.snapshot}</url>
-        </snapshotRepository>
-    </distributionManagement>
+	<distributionManagement>
+		<repository>
+			<id>${repo.id}</id>
+			<name>release</name>
+			<url>${repo.release}</url>
+		</repository>
+		<snapshotRepository>
+			<id>${repo.id}</id>
+			<name>snapshot</name>
+			<url>${repo.snapshot}</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<properties>
 		<cas.version>4.0.0</cas.version>
-		
+
 		<cas.server.host.name>localhost</cas.server.host.name>
 		<cas.server.host.port>443</cas.server.host.port>
+
+		<ad.hostname>ldap://dndc.clients.local</ad.hostname>
+		<ad.port>389</ad.port>
+		<ad.domain>CLIENTS</ad.domain>
+		<ad.searchBase>DC=clients,DC=local</ad.searchBase>
 
 		<ldap.url>ldap://10.252.220.198</ldap.url>
 		<ldap.baseDn>dc=clients,dc=local</ldap.baseDn>
 		<ldap.managerDn>cn=admin,dc=clients,dc=local</ldap.managerDn>
 		<ldap.managerPassword>Password1</ldap.managerPassword>
 		<ldap.auth.format>uid=%s,ou=people,dc=clients,dc=local</ldap.auth.format>
-		<!--
-		<cas.server.host.name>IEDUBV5NB000393.emea.avnet.com</cas.server.host.name>
-		<cas.server.host.port>8443</cas.server.host.port>
-		-->
+		<!-- <cas.server.host.name>IEDUBV5NB000393.emea.avnet.com</cas.server.host.name> 
+			<cas.server.host.port>8443</cas.server.host.port> -->
 
-        <repo.id>nexus-repo</repo.id>
-        <repo.release>http://linux.vm.tomcat/nexus/content/repositories/releases</repo.release>
-        <repo.snapshot>http://linux.vm.tomcat/nexus/content/repositories/snapshots</repo.snapshot>
+
+
+
+		<auth.db.url>jdbc:postgresql://localhost/tmi-retain</auth.db.url>
+		<auth.db.user>postgres</auth.db.user>
+		<auth.db.password>password</auth.db.password>
+		<auth.db.sql.query>select password from users where username=?</auth.db.sql.query>
+		<auth.db.driver.class>org.postgresql.Driver</auth.db.driver.class>
+
+
+		<repo.id>nexus-repo</repo.id>
+		<repo.release>http://linux.vm.tomcat/nexus/content/repositories/releases</repo.release>
+		<repo.snapshot>http://linux.vm.tomcat/nexus/content/repositories/snapshots</repo.snapshot>
 
 		<additionalparam>-Xdoclint:none</additionalparam>
 	</properties>

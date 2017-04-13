@@ -169,10 +169,10 @@
 							value="<spring:message code="screen.welcome.button.clear" />"
 							tabindex="5" type="reset" />
 
-						<div class="btn btn-default pull-right">
+						<!-- div class="btn btn-default pull-right">
 							<spring:message code="screen.welcome.label.password.forgot"
 								arguments="${password.reset.url}" />
-						</div>
+						</div-->
 					</div>
 					<!-- div class="row">
 						<spring:message code="screen.welcome.label.password.forgot"
