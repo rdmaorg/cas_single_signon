@@ -31,7 +31,7 @@
 <head>
   <meta charset="UTF-8" />
   
-  <title>Tesco Mobile Ireland &#8211; Central Authentication</title>
+  <title>${customer} &#8211; Central Authentication</title>
 
 
   <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
@@ -51,7 +51,7 @@
   
   
   
-  <link rel="icon" href="<c:url value="/mvn_icon/favicon.ico" />" type="image/x-icon" />
+  <link rel="icon" href="<c:url value="/auth_icon/favicon.ico" />" type="image/x-icon" />
   
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
@@ -67,7 +67,7 @@
         <a id="logo" href="http://www.jasig.org" title="<spring:message code="logo.title" />">Jasig</a> 
          
         <div class="alert alert-info">
-        	<h2>Tesco Mobile Ireland</h2>
+        	<h2>${customer}</h2>
         </div>
         
       </header>

@@ -14,9 +14,7 @@
 		<!-- Brand and toggle get grouped for better mobile display -->
 
 		<div class="navbar-header">
-			<!-- a href="http://www.tescomobile.ie/"><img
-				src="tesco-mobile-logo.png" alt="Tesco Mobile" height="40" /></a --> <img
-				src="mvn_aims_logo.png" alt="MVN AIMS" height="40" />
+			<img src="auth_logo.png" alt="Authentication" height="40" />
 		</div>
 		<div class="navbar-header">
 			<div class="navbar-brand">
@@ -26,11 +24,11 @@
 		
 		<!-- div class="row">
 			<div class="col-md-2">
-				<a href="http://www.tescomobile.ie/"><img
-					src="tesco-mobile-logo.png" alt="Tesco Mobile" class="headerLogo" /></a>
+				<a href="${customer.url}"><img
+					src="auth_logo.png" alt="${customer}" class="headerLogo" /></a>
 			</div>
 			<div class="col-md-2">
-				<img src="mvn_aims_logo.png" alt="MVN AIMS" class="headerLogo"
+				<img src="auth_logo.png" alt="Authentication" class="headerLogo"
 					height="50" width="200" />
 			</div>
 			<div class="col-md-4">

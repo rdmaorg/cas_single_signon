@@ -165,6 +165,9 @@
 		<cas.server.host.name>localhost</cas.server.host.name>
 		<cas.server.host.port>443</cas.server.host.port>
 
+		<customer>Avnet</customer>
+		<customer.url>http://www.avnet.com</customer.url>
+
 		<ad.url>ldap://dndc.clients.local</ad.url>
 		<!-- ad.url>ldap://dndc.clients.local:389</ad.url -->
 		<ad.domain>CLIENTS</ad.domain>
@@ -185,6 +188,7 @@
 		<auth.db.user>postgres</auth.db.user>
 		<auth.db.password>password</auth.db.password>
 		<auth.db.sql.query>select password from users where username=?</auth.db.sql.query>
+		<auth.db.encoding.algo>SHA-1</auth.db.encoding.algo>
 		<auth.db.driver.class>org.postgresql.Driver</auth.db.driver.class>
 
 

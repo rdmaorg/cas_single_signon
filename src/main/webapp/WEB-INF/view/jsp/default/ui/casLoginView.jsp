@@ -60,8 +60,8 @@
 					</div>
 					<div class="col-md-4">
 						<div class="pull-right">
-							<a href="http://www.tescomobile.ie/" target="_blank"><img
-								src="tesco-mobile-logo.png" alt="Tesco Mobile" height="40" /></a>
+							<a href="${customer.url}" target="_blank"><img
+								src="auth_logo.png" alt="${customer}" height="40" /></a>
 						</div>
 					</div>
 				</div>
