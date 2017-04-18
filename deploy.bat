@@ -25,7 +25,7 @@ cd %OLD_DIR%
 copy "target\cas.war" "%CATALINA_HOME%\webapps"
 
 rem rem Starting up Tomcat
-rem call %CATALINA_HOME%\bin\startup
+call %CATALINA_HOME%\bin\startup
 rem net start Tomcat7
 rem echo "Started Tomcat"
 

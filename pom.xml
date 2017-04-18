@@ -165,8 +165,8 @@
 		<cas.server.host.name>localhost</cas.server.host.name>
 		<cas.server.host.port>443</cas.server.host.port>
 
-		<ad.hostname>ldap://dndc.clients.local</ad.hostname>
-		<ad.port>389</ad.port>
+		<ad.url>ldap://dndc.clients.local</ad.url>
+		<!-- ad.url>ldap://dndc.clients.local:389</ad.url -->
 		<ad.domain>CLIENTS</ad.domain>
 		<ad.searchBase>DC=clients,DC=local</ad.searchBase>
 

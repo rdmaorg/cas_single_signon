@@ -107,7 +107,7 @@
     </logger>
 
     <logger name="org.ldaptive">
-        <level value="WARN" />
+        <level value="DEBUG" />
         <appender-ref ref="cas" />
     </logger>
 
