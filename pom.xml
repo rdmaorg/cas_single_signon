@@ -91,7 +91,7 @@
 			<artifactId>c3p0</artifactId>
 			<version>0.9.1.2</version>
 		</dependency>
-
+ 		
 		<!-- Include the required driver based on the client profile -->
 		<dependency>
 			<groupId>postgresql</groupId>
@@ -115,6 +115,10 @@
 			<properties>
 				<cas.server.host.name>10.252.220.65</cas.server.host.name>
 				<cas.server.host.port>443</cas.server.host.port>
+
+				<customer>Avnet</customer>
+				<customer.url>http://www.avnet.com</customer.url>
+
 			</properties>
 		</profile>
 
@@ -123,6 +127,9 @@
 			<properties>
 				<cas.server.host.name>172.16.8.11</cas.server.host.name>
 				<cas.server.host.port>443</cas.server.host.port>
+
+				<customer>Tesco Mobile Ireland</customer>
+				<customer.url>http://www.tescomobile.com</customer.url>
 
 				<ldap.url>ldap://172.16.1.24</ldap.url>
 				<ldap.baseDn>dc=tmi,dc=local</ldap.baseDn>
@@ -136,6 +143,9 @@
 			<properties>
 				<cas.server.host.name>172.16.1.20</cas.server.host.name>
 				<cas.server.host.port>443</cas.server.host.port>
+
+				<customer>Tesco Mobile Ireland</customer>
+				<customer.url>http://www.tescomobile.com</customer.url>
 
 				<ldap.url>ldap://localhost</ldap.url>
 				<ldap.baseDn>dc=tmi,dc=local</ldap.baseDn>
@@ -168,11 +178,13 @@
 		<customer>Avnet</customer>
 		<customer.url>http://www.avnet.com</customer.url>
 
+		<!-- Active Directory -->
 		<ad.url>ldap://dndc.clients.local</ad.url>
 		<!-- ad.url>ldap://dndc.clients.local:389</ad.url -->
 		<ad.domain>CLIENTS</ad.domain>
 		<ad.searchBase>DC=clients,DC=local</ad.searchBase>
 
+		<!-- MVN AIMS OpenLDAP -->
 		<ldap.url>ldap://10.252.220.198</ldap.url>
 		<ldap.baseDn>dc=clients,dc=local</ldap.baseDn>
 		<ldap.managerDn>cn=admin,dc=clients,dc=local</ldap.managerDn>
@@ -183,11 +195,11 @@
 
 
 
-
-		<auth.db.url>jdbc:postgresql://localhost/tmi-retain</auth.db.url>
+		<!-- GDMA Database assuming SHA1 encoded password is stored in users_gdma2 table -->
+		<auth.db.url>jdbc:postgresql://localhost/gdma</auth.db.url>
 		<auth.db.user>postgres</auth.db.user>
 		<auth.db.password>password</auth.db.password>
-		<auth.db.sql.query>select password from users where username=?</auth.db.sql.query>
+		<auth.db.sql.query>select password from users_gdma2 where username=?</auth.db.sql.query>
 		<auth.db.encoding.algo>SHA-1</auth.db.encoding.algo>
 		<auth.db.driver.class>org.postgresql.Driver</auth.db.driver.class>
 

@@ -94,7 +94,7 @@
 
 	<bean id="adConnectionConfig" class="org.ldaptive.ConnectionConfig"
 		p:ldapUrl="${ad.url}" p:connectTimeout="${ldap.connectTimeout}"
-		p:useStartTLS="${ldap.useStartTLS}" p:sslConfig-ref="sslConfig" />
+		p:useStartTLS="${ldap.useStartTLS}" p:sslConfig-ref="adSslConfig" />
 
 	<bean id="adSslConfig" class="org.ldaptive.ssl.SslConfig">
 		<property name="credentialConfig">
