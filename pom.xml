@@ -198,7 +198,7 @@
 		<auth.db.url>jdbc:postgresql://localhost/gdma</auth.db.url>
 		<auth.db.user>postgres</auth.db.user>
 		<auth.db.password>password</auth.db.password>
-		<auth.db.sql.query>select password from users_gdma2 where username=?</auth.db.sql.query>
+		<auth.db.sql.query>select user_password from users_gdma2 where username=?</auth.db.sql.query>
 		<auth.db.encoding.algo>SHA-1</auth.db.encoding.algo>
 		<auth.db.driver.class>org.postgresql.Driver</auth.db.driver.class>
 
