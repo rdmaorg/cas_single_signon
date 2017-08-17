@@ -57,7 +57,7 @@
 				<entry key-ref="adAuthenticationHandler" value="#{null}" />
 				 -->
 				 
-				<entry key-ref="ldapAuthenticationHandler" value="#{null}" />
+				<entry key-ref="${authentication.handler.bean}" value="#{null}" />
 				<entry key-ref="proxyAuthenticationHandler" value-ref="proxyPrincipalResolver" />
 			</map>
 		</constructor-arg>
@@ -160,6 +160,9 @@
 	</util:list>
 
 
+	<import resource="${authentication.config.context.resource}"/>
+
+
 	<!-- Farrukh DB Configuration Begin -->
 
 	<!-- import resource="dbConfigContext.xml"/ -->
@@ -175,7 +178,7 @@
 
 	<!-- Farrukh LDAP Configuration Begin -->
 
-	<import resource="ldapConfigContext.xml"/>
+	<!-- import resource="ldapConfigContext.xml"/ -->
 
 	<!-- Farrukh LDAP Configuration End -->
 

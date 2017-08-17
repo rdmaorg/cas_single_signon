@@ -117,6 +117,9 @@
 				<cas.server.host.name>localhost</cas.server.host.name>
 				<cas.server.host.port>443</cas.server.host.port>
 
+				<authentication.handler.bean>adAuthenticationHandler</authentication.handler.bean>
+				<authentication.config.context.resource>adConfigContext.xml</authentication.config.context.resource>
+
 				<customer>Vodafone Ireland</customer>
 				<customer.url>http://www.vodafone.ie</customer.url>
 
@@ -216,6 +219,11 @@
 		<auth.logo>auth_logo.png</auth.logo>
 
 		<ui.theme>bootstrap-theme-cerulean.min.css</ui.theme>
+		
+		<!-- Authentication settings -->
+		<authentication.handler.bean>ldapAuthenticationHandler</authentication.handler.bean>
+		<authentication.config.context.resource>ldapConfigContext.xml</authentication.config.context.resource>
+		
 		<!-- Active Directory -->
 		<ad.url>ldap://dndc.clients.local</ad.url>
 		<!-- ad.url>ldap://dndc.clients.local:389</ad.url -->
