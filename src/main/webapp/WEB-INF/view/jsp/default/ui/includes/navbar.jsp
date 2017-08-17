@@ -14,11 +14,12 @@
 		<!-- Brand and toggle get grouped for better mobile display -->
 
 		<div class="navbar-header">
-			<img src="auth_logo.png" alt="Authentication" height="40" />
+			<img src="${auth.logo}" alt="Authentication" height="40" />
+			<span>&nbsp;</span>
 		</div>
 		<div class="navbar-header">
 			<div class="navbar-brand">
-				<span>Central Authentication Service</span>
+				<span>${customer}&nbsp;&#8211;&nbsp;Central Authentication Service</span>
 			</div>
 		</div>
 		

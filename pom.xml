@@ -119,6 +119,9 @@
 
 				<customer>Vodafone Ireland</customer>
 				<customer.url>http://www.vodafone.ie</customer.url>
+
+				<auth.fav.icon>/auth_icon/favicon.ico</auth.fav.icon>
+				<auth.logo>auth_logo_vodafone.png</auth.logo>
 			</properties>
 		</profile>
 
@@ -141,6 +144,7 @@
 
 				<customer>Tesco Mobile Ireland</customer>
 				<customer.url>http://www.tescomobile.com</customer.url>
+				<auth.logo>auth_logo_tescomobile.png</auth.logo>
 
 				<ldap.url>ldap://172.16.1.24</ldap.url>
 				<ldap.baseDn>dc=tmi,dc=local</ldap.baseDn>
@@ -157,6 +161,7 @@
 
 				<customer>Tesco Mobile Ireland</customer>
 				<customer.url>http://www.tescomobile.com</customer.url>
+				<auth.logo>auth_logo_tescomobile.png</auth.logo>
 
 				<ldap.url>ldap://localhost</ldap.url>
 				<ldap.baseDn>dc=tmi,dc=local</ldap.baseDn>
@@ -188,6 +193,9 @@
 
 		<customer>Avnet</customer>
 		<customer.url>http://www.avnet.com</customer.url>
+		
+		<auth.fav.icon>/auth_icon/favicon.ico</auth.fav.icon>
+		<auth.logo>auth_logo.png</auth.logo>
 
 		<!-- Active Directory -->
 		<ad.url>ldap://dndc.clients.local</ad.url>

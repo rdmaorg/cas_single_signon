@@ -51,7 +51,7 @@
   
   
   
-  <link rel="icon" href="<c:url value="/auth_icon/favicon.ico" />" type="image/x-icon" />
+  <link rel="icon" href="<c:url value="${auth.fav.icon}" />" type="image/x-icon" />
   
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>

@@ -61,7 +61,7 @@
 					<div class="col-md-4">
 						<div class="pull-right">
 							<a href="${customer.url}" target="_blank"><img
-								src="auth_logo.png" alt="${customer}" height="40" /></a>
+								src="${auth.logo}" alt="${customer}" height="40" /></a>
 						</div>
 					</div>
 				</div>
