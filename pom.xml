@@ -112,6 +112,17 @@
 		</profile>
 
 		<profile>
+			<id>test-vodafone</id>
+			<properties>
+				<cas.server.host.name>10.252.220.65</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+
+				<customer>Vodafone Ireland</customer>
+				<customer.url>http://www.vodafone.ie</customer.url>
+			</properties>
+		</profile>
+
+		<profile>
 			<id>test</id>
 			<properties>
 				<cas.server.host.name>10.252.220.65</cas.server.host.name>

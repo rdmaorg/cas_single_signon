@@ -50,14 +50,14 @@
 					Also open the handler configuration below by uncommenting import resource="*ConfigContext.xml"
 				-->
 				<!-- 
+				<entry key-ref="adAuthenticationHandler" value="#{null}" />
 				<entry key-ref="dbAuthHandler" value-ref="primaryPrincipalResolver" />
-				<entry key-ref="ldapAuthenticationHandler" value="#{null}" />
 
 				<entry key-ref="adAuthenticationHandler" value-ref="primaryPrincipalResolver" />
 				<entry key-ref="adAuthenticationHandler" value="#{null}" />
 				 -->
 				 
-				<entry key-ref="adAuthenticationHandler" value="#{null}" />
+				<entry key-ref="ldapAuthenticationHandler" value="#{null}" />
 				<entry key-ref="proxyAuthenticationHandler" value-ref="proxyPrincipalResolver" />
 			</map>
 		</constructor-arg>
@@ -169,13 +169,13 @@
 
 	<!-- Farrukh AD Configuration Begin -->
 
-	<import resource="adConfigContext.xml"/>
+	<!--  import resource="adConfigContext.xml"/ -->
 
 	<!-- Farrukh AD Configuration End -->
 
 	<!-- Farrukh LDAP Configuration Begin -->
 
-	<!-- import resource="ldapConfigContext.xml"/ -->
+	<import resource="ldapConfigContext.xml"/>
 
 	<!-- Farrukh LDAP Configuration End -->
 
