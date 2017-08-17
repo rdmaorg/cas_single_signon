@@ -209,8 +209,8 @@
 		<cas.server.host.name>localhost</cas.server.host.name>
 		<cas.server.host.port>443</cas.server.host.port>
 
-		<customer>Avnet</customer>
-		<customer.url>http://www.avnet.com</customer.url>
+		<customer>Client Solutions</customer>
+		<customer.url>http://www.as.techdata.eu/clientsolutions/</customer.url>
 		
 		<auth.fav.icon>/auth_icon/favicon.ico</auth.fav.icon>
 		<auth.logo>auth_logo.png</auth.logo>

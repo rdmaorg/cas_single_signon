@@ -50,7 +50,7 @@
 					Also open the handler configuration below by uncommenting import resource="*ConfigContext.xml"
 				-->
 				<!-- 
-				<entry key-ref="adAuthenticationHandler" value="#{null}" />
+				<entry key-ref="ldapAuthenticationHandler" value="#{null}" />
 				<entry key-ref="dbAuthHandler" value-ref="primaryPrincipalResolver" />
 
 				<entry key-ref="adAuthenticationHandler" value-ref="primaryPrincipalResolver" />
