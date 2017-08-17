@@ -112,6 +112,22 @@
 		</profile>
 
 		<profile>
+			<id>dev-vodafone</id>
+			<properties>
+				<cas.server.host.name>localhost</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+
+				<customer>Vodafone Ireland</customer>
+				<customer.url>http://www.vodafone.ie</customer.url>
+
+				<auth.fav.icon>/auth_icon/favicon.ico</auth.fav.icon>
+				<auth.logo>auth_logo_vodafone.png</auth.logo>
+
+				<ui.theme>bootstrap-theme-united.min.css</ui.theme>
+			</properties>
+		</profile>
+
+		<profile>
 			<id>test-vodafone</id>
 			<properties>
 				<cas.server.host.name>10.252.220.65</cas.server.host.name>
@@ -122,6 +138,8 @@
 
 				<auth.fav.icon>/auth_icon/favicon.ico</auth.fav.icon>
 				<auth.logo>auth_logo_vodafone.png</auth.logo>
+
+				<ui.theme>bootstrap-theme-united.min.css</ui.theme>
 			</properties>
 		</profile>
 
@@ -197,6 +215,7 @@
 		<auth.fav.icon>/auth_icon/favicon.ico</auth.fav.icon>
 		<auth.logo>auth_logo.png</auth.logo>
 
+		<ui.theme>bootstrap-theme-cerulean.min.css</ui.theme>
 		<!-- Active Directory -->
 		<ad.url>ldap://dndc.clients.local</ad.url>
 		<!-- ad.url>ldap://dndc.clients.local:389</ad.url -->

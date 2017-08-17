@@ -46,7 +46,7 @@
   <%--
   <link rel="stylesheet" href="<c:url value="/css/bootstrap-theme.min.css" />" />
    --%>
-  <link rel="stylesheet" href="<c:url value="/css/bootstrap-theme-cerulean.min.css" />" />
+  <link rel="stylesheet" href="<c:url value="/css/${ui.theme}" />" />
   <link rel="stylesheet" href="<c:url value="/css/jquery.validate.css" />" />
   
   
