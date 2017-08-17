@@ -5,7 +5,7 @@ run deploy_tomcat_profile.bat <profile_name> to deploy on tomcat with the profil
 
 Works with following authentication providers:
 1. Database
-		<authentication.handler.bean>dbAuthenticationHandler</authentication.handler.bean>
+		<authentication.handler.bean>dbAuthHandler</authentication.handler.bean>
 		<authentication.config.context.resource>dbConfigContext.xml</authentication.config.context.resource>
 2. LDAP
 		<authentication.handler.bean>ldapAuthenticationHandler</authentication.handler.bean>
