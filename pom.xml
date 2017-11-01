@@ -99,7 +99,20 @@
 			<artifactId>postgresql</artifactId>
 			<version>9.1-901.jdbc4</version>
 		</dependency>
-
+		
+		<!-- For newer versions of MS SQL Server see: http://stackoverflow.com/questions/26404283/java-hibernate-with-sql-server-2012-not-working -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>6.1.0.jre8</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/net.sourceforge.jtds/jtds -->
+		<dependency>
+		    <groupId>net.sourceforge.jtds</groupId>
+		    <artifactId>jtds</artifactId>
+		    <version>1.3.1</version>
+		</dependency>
 	</dependencies>
 
 	<profiles>
@@ -110,6 +123,35 @@
 				<cas.server.host.port>443</cas.server.host.port>
 			</properties>
 		</profile>
+		
+		<profile>
+			<id>dev-mysql</id>
+			<properties>
+				<cas.server.host.name>localhost</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+				<auth.db.url>jdbc:mysql://localhost:3306/RDMA</auth.db.url>
+				<auth.db.user>root</auth.db.user>
+				<auth.db.password>password</auth.db.password>
+				<auth.db.sql.query>select user_password from users_gdma2 where username=?</auth.db.sql.query>
+				<auth.db.encoding.algo>SHA-1</auth.db.encoding.algo>
+				<auth.db.driver.class>com.mysql.jdbc.Driver</auth.db.driver.class>
+			</properties>
+		</profile>
+		<profile>
+			<id>dev-mssql</id>
+			<properties>
+				<cas.server.host.name>localhost</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+				<auth.db.url>jdbc:jtds:sqlserver://10.252.222.112:1433/RDMA</auth.db.url>
+				<auth.db.user>sa</auth.db.user>
+				<auth.db.password>sa</auth.db.password>
+				<auth.db.sql.query>select user_password from users_gdma2 where username=?</auth.db.sql.query>
+				<auth.db.encoding.algo>SHA-1</auth.db.encoding.algo>
+				<auth.db.driver.class>net.sourceforge.jtds.jdbc.Driver</auth.db.driver.class>
+			</properties>
+		</profile>
+		
+				
 
 		<profile>
 			<id>dev-vodafone</id>
@@ -126,7 +168,7 @@
 				<auth.fav.icon>/auth_icon/favicon.ico</auth.fav.icon>
 				<auth.logo>auth_logo_vodafone.png</auth.logo>
 
-				<ui.theme>bootstrap-theme-united.min.css</ui.theme>
+				<ui.theme>bootstrap-theme-vodafone.min.css</ui.theme>
 			</properties>
 		</profile>
 
@@ -142,7 +184,7 @@
 				<auth.fav.icon>/auth_icon/favicon.ico</auth.fav.icon>
 				<auth.logo>auth_logo_vodafone.png</auth.logo>
 
-				<ui.theme>bootstrap-theme-united.min.css</ui.theme>
+				<ui.theme>bootstrap-theme-vodafone.min.css</ui.theme>
 			</properties>
 		</profile>
 
@@ -238,8 +280,6 @@
 		<ldap.auth.format>uid=%s,ou=people,dc=clients,dc=local</ldap.auth.format>
 		<!-- <cas.server.host.name>IEDUBV5NB000393.emea.avnet.com</cas.server.host.name> 
 			<cas.server.host.port>8443</cas.server.host.port> -->
-
-
 
 		<!-- GDMA Database assuming SHA1 encoded password is stored in users_gdma2 table -->
 		<auth.db.url>jdbc:postgresql://localhost/gdma</auth.db.url>
