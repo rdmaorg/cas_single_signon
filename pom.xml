@@ -238,12 +238,12 @@
 	<distributionManagement>
 		<repository>
 			<id>${repo.id}</id>
-			<name>release</name>
+			<name>Releases</name>
 			<url>${repo.release}</url>
 		</repository>
 		<snapshotRepository>
 			<id>${repo.id}</id>
-			<name>snapshot</name>
+			<name>Snapshot</name>
 			<url>${repo.snapshot}</url>
 		</snapshotRepository>
 	</distributionManagement>
@@ -290,8 +290,8 @@
 		<auth.db.driver.class>org.postgresql.Driver</auth.db.driver.class>
 
 		<repo.id>nexus-repo</repo.id>
-		<repo.release>http://linux.vm.tomcat/nexus/content/repositories/releases</repo.release>
-		<repo.snapshot>http://linux.vm.tomcat/nexus/content/repositories/snapshots</repo.snapshot>
+		<repo.release>http://csolnexus2.clients.local/repository/maven-releases</repo.release>
+		<repo.snapshot>http://csolnexus2.clients.local/repository/maven-snapshots</repo.snapshot>
 
 		<additionalparam>-Xdoclint:none</additionalparam>
 	</properties>
