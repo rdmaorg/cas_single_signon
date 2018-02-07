@@ -9,9 +9,9 @@
 	<description>Authentication CAS</description>
 
 	<scm>
-		<connection>scm:hg:http://10.252.220.63/hg/generic-authentication-cas</connection>
-		<developerConnection>scm:hg:http://10.252.220.63/hg/generic-authentication-cas</developerConnection>
-		<url>http://10.252.220.63/hg/generic-authentication-cas</url>
+		<connection>scm:git:https://bitbucket.avtcloud.com/scm/csl/generic-authentication-cas.git</connection>
+		<developerConnection>scm:git:https://bitbucket.avtcloud.com/scm/csl/generic-authentication-cas.git</developerConnection>
+		<url>https://bitbucket.avtcloud.com/scm/csl/generic-authentication-cas</url>
 		<tag>HEAD</tag>
 	</scm>
 
