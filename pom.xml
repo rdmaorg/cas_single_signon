@@ -81,6 +81,15 @@
 			<type>war</type>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- OAuth Server Support -->
+		<dependency>
+			<groupId>org.jasig.cas</groupId>
+			<artifactId>cas-server-support-oauth</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		
+		
 		<!-- LDAP Authentication -->
 		<dependency>
 			<groupId>org.jasig.cas</groupId>
