@@ -210,8 +210,8 @@
 				<cas.server.host.name>10.252.220.65</cas.server.host.name>
 				<cas.server.host.port>443</cas.server.host.port>
 
-				<customer>Avnet</customer>
-				<customer.url>http://www.avnet.com</customer.url>
+				<customer>Techdata</customer>
+				<customer.url>http://www.techdata.com</customer.url>
 			</properties>
 		</profile>
 
