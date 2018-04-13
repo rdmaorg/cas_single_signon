@@ -129,6 +129,26 @@
 			p:name="HTTP and IMAP" p:description="Allows HTTP(S) and IMAP(S) protocols"
 			p:serviceId="^(https?|imaps?)://.*" p:evaluationOrder="10000001"
 			p:allowedToProxy="true" />
+			
+		<!-- A dedicated component to recognize OAuth Callback Authorization requests -->
+      <bean class="org.jasig.cas.support.oauth.services.OAuthCallbackAuthorizeService">
+        <property name="id" value="1" />
+        <property name="name" value="HTTP" />
+        <property name="description" value="oauth wrapper callback url" />
+        <!-- By default, only support regex patterns if/when needed -->
+        <property name="serviceId" value="${server.prefix}/oauth2.0/callbackAuthorize" />
+      </bean>
+      
+		<!-- A dedicated component to recognize OAuth Authorization requests for the service -->
+      <bean class="org.jasig.cas.support.oauth.services.OAuthRegisteredService">
+        <property name="id" value="2" />
+        <property name="name" value="localhost 8080 client" />
+        <property name="description" value="Test OAuth Client at localhost 8080" />
+        <!-- Supports regex patterns by default for service ids -->
+        <property name="serviceId" value="http://localhost:8080/login/facebook" />
+        <property name="clientId" value="233668646673605" />
+        <property name="clientSecret" value="33b17e044ee6a4fa383f46ec6e28ea1d" />
+      </bean>
 		<!-- Use the following definition instead of the above to further restrict 
 			access to services within your domain (including sub domains). Note that 
 			example.com must be replaced with the domain you wish to permit. This example 
