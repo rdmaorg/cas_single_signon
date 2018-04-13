@@ -1,0 +1,30 @@
+body {
+  background:#405B7D;
+}
+
+nav.navbar,.panel-heading {
+  display:none;
+}
+
+.systemTitle {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff !important;
+}
+
+#fm1 .row input[type=text], #fm1 .row input[type=password] {
+	background: #fff;
+}
+
+.systemTitle h1 {
+	color: #fff !important;
+}
+
+.panel-primary>.panel-heading, .btn-primary {
+	background: #405B7D !important;
+	border:none;
+}
+
+.panel,.alert {
+	border-radius:0;
+}

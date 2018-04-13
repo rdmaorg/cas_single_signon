@@ -27,7 +27,7 @@
 -->
 <c:if test="${not pageContext.request.secure}">
 	<div class="row">
-		<div class="col-md-5">
+		<div class="col-md-4">
 			<div id="msg" class="alert alert-danger">
 
 				<h2>Non-secure Connection</h2>
@@ -43,8 +43,13 @@
 --%>
 
 <%-- div class="box" id="login" --%>
+<div class="row systemTitle">
+	<div class="col-md-offset-4 col-md-4">
+    	<h1>${customer} <br/> Central Authentication</h1>
+	</div>
+</div>
 <div class="row">
-	<div class="col-md-5">
+	<div class="col-md-offset-4 col-md-4">
 		<div class="panel panel-primary"
 			<%-- id="login"--%> style="margin-left: 0px">
 
@@ -179,6 +184,9 @@
 							arguments="${password.reset.url}" />
 					</div -->
 				</form:form>
+				<p class="h6">
+					<spring:message code="screen.welcome.security" />
+				</p>
 			</div>
 
 		</div>
@@ -187,13 +195,11 @@
 
 
 
-<div class="row">
-	<div class="col-md-5">
+<%-- <div class="row">
+	<div class="col-md-offset-4 col-md-4">
 		<div id="sidebar">
 			<div class="alert alert-warning"<%-- class="sidebar-content"--%>>
-				<p>
-					<spring:message code="screen.welcome.security" />
-				</p>
+
 
 				<%-- 
 		<div id="list-languages">
@@ -263,11 +269,11 @@
 				</c:otherwise>
 			</c:choose>
 		</div>
-		--%>
+		
 			</div>
 		</div>
 	</div>
-</div>
+</div>--%>
 
 <script type="text/javascript">
 	$(document).ready(function() {

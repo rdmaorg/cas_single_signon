@@ -22,7 +22,7 @@
 
       <%-- /div--%> <!-- END #content -->
       
-      <footer>
+      <footer class="text-center">
         <div id="copyright">
           <%-- <p>Copyright &copy; Avnet 2015. All rights reserved.</p> --%>
           <p><spring:message code="copyright" /></p>
