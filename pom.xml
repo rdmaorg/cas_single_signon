@@ -210,8 +210,8 @@
 				<cas.server.host.name>10.252.220.65</cas.server.host.name>
 				<cas.server.host.port>443</cas.server.host.port>
 
-				<customer>Techdata</customer>
-				<customer.url>http://www.techdata.com</customer.url>
+				<customer>Client Solutions</customer>
+				<customer.url>http://www.as.techdata.eu/clientsolutions/</customer.url>
 			</properties>
 		</profile>
 
