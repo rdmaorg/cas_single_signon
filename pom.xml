@@ -167,6 +167,26 @@
 			</properties>
 		</profile>
 		
+		<profile>
+			<id>test-postgres</id>
+			<properties>
+			
+				<cas.server.host.name>localhost</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+			
+				<auth.db.url>jdbc:postgresql://10.252.220.198:5432/ms-auth-2</auth.db.url>
+				<auth.db.user>postgres</auth.db.user>
+				<auth.db.password>password</auth.db.password>
+				<auth.db.sql.query>select password from auth.user where username=?</auth.db.sql.query>
+				<auth.db.encoding.algo>SHA-256</auth.db.encoding.algo>
+				<auth.db.driver.class>org.postgresql.Driver</auth.db.driver.class>
+				
+				<authentication.handler.bean>dbAuthHandler</authentication.handler.bean>
+				<authentication.config.context.resource>dbConfigContext.xml</authentication.config.context.resource>
+				
+			</properties>
+		</profile>
+		
 				
 
 		<profile>
