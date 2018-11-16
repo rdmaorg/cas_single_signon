@@ -270,7 +270,7 @@
 		</profile>
 
 		<profile>
-			<id>musgrave</id>
+			<id>musgrave-psq</id>
 			<properties>
 				<cas.server.host.name>10.216.2.20</cas.server.host.name>
 				<cas.server.host.port>443</cas.server.host.port>
