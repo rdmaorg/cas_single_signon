@@ -269,6 +269,25 @@
 			</properties>
 		</profile>
 
+		<profile>
+			<id>musgrave</id>
+			<properties>
+				<cas.server.host.name>10.216.2.20</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+				<auth.db.url>jdbc:jtds:sqlserver://10.252.222.112:1433/RDMA</auth.db.url>
+				<auth.db.user>sa</auth.db.user>
+				<auth.db.password>sa</auth.db.password>
+				<auth.db.sql.query>select user_password from users_gdma2 where username=?</auth.db.sql.query>
+				<auth.db.encoding.algo>SHA-1</auth.db.encoding.algo>
+				<auth.db.driver.class>net.sourceforge.jtds.jdbc.Driver</auth.db.driver.class>
+
+				<customer>Musgrave</customer>
+				<customer.url>https://www.musgravegroup.com/</customer.url>
+				<auth.fav.icon>/auth_icon/favicon.ico</auth.fav.icon>
+				<auth.logo>auth_logo_musgrave.png</auth.logo>
+			</properties>
+		</profile>
+
 	</profiles>
 
 	<distributionManagement>
@@ -291,7 +310,7 @@
 		<cas.server.host.port>443</cas.server.host.port>
 
 		<customer>Client Solutions</customer>
-		<customer.url>http://www.as.techdata.eu/clientsolutions/</customer.url>
+		<customer.url>https://www.clientsolutions.ie/</customer.url>
 		
 		<auth.fav.icon>/auth_icon/favicon.ico</auth.fav.icon>
 		<auth.logo>auth_logo.png</auth.logo>
