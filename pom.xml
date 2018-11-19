@@ -279,7 +279,15 @@
 				<auth.db.password></auth.db.password>
 				<auth.db.sql.query>select user_password from users_gdma2 where username=?</auth.db.sql.query>
 				<auth.db.encoding.algo>SHA-1</auth.db.encoding.algo>
-				<auth.db.driver.class>net.sourceforge.jtds.jdbc.Driver</auth.db.driver.class>
+				<auth.db.driver.class>com.microsoft.sqlserver.jdbc.SQLServerDriver</auth.db.driver.class>
+
+
+				
+				<authentication.handler.bean>dbAuthHandler</authentication.handler.bean>
+				<authentication.config.context.resource>dbConfigContext.xml</authentication.config.context.resource>
+				
+
+
 
 				<customer>Musgrave</customer>
 				<customer.url>https://www.musgravegroup.com/</customer.url>
