@@ -274,7 +274,7 @@
 			<properties>
 				<cas.server.host.name>10.216.2.20</cas.server.host.name>
 				<cas.server.host.port>443</cas.server.host.port>
-				<auth.db.url>jdbc:sqlserver://10.216.2.19:1433;database=RDMA;integratedSecurity=true;</auth.db.url>
+				<auth.db.url>jdbc:sqlserver://MRPIAVDBDEV01:1433;database=RDMA;integratedSecurity=true;</auth.db.url>
 				<auth.db.sql.query>select user_password from dbo.users_gdma2 where username=?</auth.db.sql.query>
 				<auth.db.encoding.algo>SHA-1</auth.db.encoding.algo>
 				<auth.db.driver.class>com.microsoft.sqlserver.jdbc.SQLServerDriver</auth.db.driver.class>
