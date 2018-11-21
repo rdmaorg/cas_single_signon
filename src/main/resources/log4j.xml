@@ -121,9 +121,28 @@
         <appender-ref ref="cas" />
     </logger>
 
+    <logger name="org.jasig.cas.adaptors.jdbc">
+        <level value="DEBUG" />
+        <appender-ref ref="cas" />
+    </logger>
+
+    <logger name="org.springframework.jdbc">
+        <level value="DEBUG" />
+        <appender-ref ref="cas" />
+    </logger>
+
+    <logger name="com.mchange.v2.c3p0">
+        <level value="DEBUG" />
+        <appender-ref ref="cas" />
+    </logger>
+
+    <logger name="org.jasig.cas.authentication.handler">
+        <level value="DEBUG" />
+        <appender-ref ref="cas" />
+    </logger>
 
     <logger name="com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager">
-        <level value="INFO" />
+        <level value="DEBUG" />
         <appender-ref ref="cas" />
     </logger>
 

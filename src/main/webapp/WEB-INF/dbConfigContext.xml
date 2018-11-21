@@ -46,6 +46,22 @@
 		p:sql="${database.query}" />
 
 
+	<!--  
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jdbc/cas" />
+	</bean>
+	-->
+
+	<!--  
+	<bean id="dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name = "driverClassName" value = "${database.driverClass}"/>
+      <property name = "url" value = "${database.url}"/>
+      <property name = "username" value = "${database.user}"/>
+      <property name = "password" value = "${database.password}"/>
+	</bean>
+	-->
+
+
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		p:driverClass="${database.driverClass}" p:jdbcUrl="${database.url}"
 		p:user="${database.user}" p:password="${database.password}"
@@ -57,6 +73,5 @@
 		p:acquireRetryDelay="${database.pool.acquireRetryDelay}"
 		p:idleConnectionTestPeriod="${database.pool.idleConnectionTestPeriod}"
 		p:preferredTestQuery="${database.pool.connectionHealthQuery}" />
-
-       
+     
 </beans>
