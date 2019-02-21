@@ -289,6 +289,28 @@
 			</properties>
 		</profile>
 
+		<profile>
+			<id>musgrave-prod</id>
+			<properties>
+				<cas.server.host.name>10.216.2.20</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+
+				<!-- Active Directory -->
+				<ad.url>ldap://dndc.clients.local</ad.url>
+				<!-- ad.url>ldap://dndc.clients.local:389</ad.url -->
+				<ad.domain>CLIENTS</ad.domain>
+				<ad.searchBase>DC=clients,DC=local</ad.searchBase>
+
+				<authentication.handler.bean>adAuthenticationHandler</authentication.handler.bean>
+				<authentication.config.context.resource>adConfigContext.xml</authentication.config.context.resource>
+
+				<customer>Musgrave</customer>
+				<customer.url>https://www.musgravegroup.com/</customer.url>
+				<auth.fav.icon>/auth_icon/favicon.ico</auth.fav.icon>
+				<auth.logo>auth_logo_musgrave.png</auth.logo>
+			</properties>
+		</profile>
+
 	</profiles>
 
 	<distributionManagement>
