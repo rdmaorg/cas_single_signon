@@ -52,10 +52,10 @@
 				<!-- 
 				<entry key-ref="ldapAuthenticationHandler" value="#{null}" />
 				<entry key-ref="dbAuthHandler" value-ref="primaryPrincipalResolver" />
-
+ 				-->
 				<entry key-ref="adAuthenticationHandler" value-ref="primaryPrincipalResolver" />
 				<entry key-ref="adAuthenticationHandler" value="#{null}" />
-				 -->
+				
 				 
 				<entry key-ref="${authentication.handler.bean}" value="#{null}" />
 				<entry key-ref="proxyAuthenticationHandler" value-ref="proxyPrincipalResolver" />

@@ -296,9 +296,9 @@
 				<cas.server.host.port>443</cas.server.host.port>
 
 				<!-- Active Directory -->
-				<ad.url>ldap://airdc003.musgravegroup.net</ad.url>
+				<ad.url>ldap://tradc004.musgravegroup.net</ad.url>
 				<ad.domain>MUSGRAVE</ad.domain>
-				<ad.searchBase>DC=musgrave,DC=local</ad.searchBase>
+				<ad.searchBase>DC=musgravegroup,DC=net</ad.searchBase>
 
 				<authentication.handler.bean>adAuthenticationHandler</authentication.handler.bean>
 				<authentication.config.context.resource>adConfigContext.xml</authentication.config.context.resource>
