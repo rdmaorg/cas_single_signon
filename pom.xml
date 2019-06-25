@@ -187,6 +187,26 @@
 			</properties>
 		</profile>
 		
+		<profile>
+			<id>uat_postgres</id>
+			<properties>
+			
+				<cas.server.host.name>localhost</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+			
+				<auth.db.url>jdbc:postgresql://10.252.220.198:5432/gdma</auth.db.url>
+				<auth.db.user>postgres</auth.db.user>
+				<auth.db.password>password</auth.db.password>
+				<auth.db.sql.query>select user_password from users_gdma2 where username=?</auth.db.sql.query>
+				<auth.db.encoding.algo>SHA-256</auth.db.encoding.algo>
+				<auth.db.driver.class>org.postgresql.Driver</auth.db.driver.class>
+				
+				<authentication.handler.bean>dbAuthHandler</authentication.handler.bean>
+				<authentication.config.context.resource>dbConfigContext.xml</authentication.config.context.resource>
+				
+			</properties>
+		</profile>
+		
 				
 
 		<profile>
@@ -270,7 +290,7 @@
 		</profile>
 
 		<profile>
-			<id>musgrave-psq</id>
+			<id>musgrave-psq-old</id>
 			<properties>
 				<cas.server.host.name>10.216.2.20</cas.server.host.name>
 				<cas.server.host.port>443</cas.server.host.port>
@@ -281,6 +301,27 @@
 
 				<authentication.handler.bean>dbAuthHandler</authentication.handler.bean>
 				<authentication.config.context.resource>dbConfigContext.xml</authentication.config.context.resource>
+
+				<customer>Musgrave</customer>
+				<customer.url>https://www.musgravegroup.com/</customer.url>
+				<auth.fav.icon>/auth_icon/favicon.ico</auth.fav.icon>
+				<auth.logo>auth_logo_musgrave.png</auth.logo>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>musgrave-psq</id>
+			<properties>
+				<cas.server.host.name>applications-psq.musgrave.ie</cas.server.host.name>
+				<cas.server.host.port>443</cas.server.host.port>
+				
+				<!-- Active Directory -->
+				<ad.url>ldap://tradc004.musgravegroup.net</ad.url>
+				<ad.domain>MUSGRAVE</ad.domain>
+				<ad.searchBase>DC=musgravegroup,DC=net</ad.searchBase>
+
+				<authentication.handler.bean>adAuthenticationHandler</authentication.handler.bean>
+				<authentication.config.context.resource>adConfigContext.xml</authentication.config.context.resource>
 
 				<customer>Musgrave</customer>
 				<customer.url>https://www.musgravegroup.com/</customer.url>
