@@ -116,6 +116,13 @@
 			<version>9.1-901.jdbc4</version>
 		</dependency>
 		
+		<!--MySQL support -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.11</version>
+		</dependency>
+		
 		<!-- For newer versions of MS SQL Server see: http://stackoverflow.com/questions/26404283/java-hibernate-with-sql-server-2012-not-working -->
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
@@ -136,7 +143,7 @@
 			<id>dev</id>
 			<properties>
 				<cas.server.host.name>localhost</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.host.port>:443</cas.server.host.port>
 			</properties>
 		</profile>
 		
@@ -144,7 +151,7 @@
 			<id>dev-mysql</id>
 			<properties>
 				<cas.server.host.name>localhost</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.host.port>:443</cas.server.host.port>
 				<auth.db.url>jdbc:mysql://localhost:3306/RDMA</auth.db.url>
 				<auth.db.user>root</auth.db.user>
 				<auth.db.password>password</auth.db.password>
@@ -157,7 +164,7 @@
 			<id>dev-mssql</id>
 			<properties>
 				<cas.server.host.name>localhost</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.host.port>:443</cas.server.host.port>
 				<auth.db.url>jdbc:jtds:sqlserver://10.252.222.112:1433/RDMA</auth.db.url>
 				<auth.db.user>sa</auth.db.user>
 				<auth.db.password>sa</auth.db.password>
@@ -168,11 +175,71 @@
 		</profile>
 		
 		<profile>
+			<id>httpdev</id>
+			<properties>
+				<cas.server.host.name>localhost</cas.server.host.name>
+				<cas.server.protocol>http</cas.server.protocol>
+				<cas.server.host.port>:8080</cas.server.host.port>
+				
+				<auth.db.url>jdbc:postgresql://10.252.220.198:5432/gdma</auth.db.url>
+				<auth.db.user>postgres</auth.db.user>
+				<auth.db.password>password</auth.db.password>
+				<auth.db.sql.query>select user_password from users_gdma2 where username=?</auth.db.sql.query>
+				<auth.db.encoding.algo>SHA-256</auth.db.encoding.algo>
+				<auth.db.driver.class>org.postgresql.Driver</auth.db.driver.class>
+				
+				<authentication.handler.bean>dbAuthHandler</authentication.handler.bean>
+				<authentication.config.context.resource>dbConfigContext.xml</authentication.config.context.resource>
+				
+			</properties>
+		</profile>
+		
+		<profile>
+			<id>ryanairtest</id>
+			<properties>
+				<cas.server.host.name>10.154.12.34</cas.server.host.name>
+				<cas.server.protocol>http</cas.server.protocol>
+				<cas.server.host.port>:8080</cas.server.host.port>
+				
+				<auth.db.url>jdbc:mysql://fr-bi-rdma-rds-dev.cqvompr7caqk.eu-west-1.rds.amazonaws.com:3306/rdma?useSSL=false</auth.db.url>
+				<auth.db.user>rdmadev</auth.db.user>
+				<auth.db.password>ryAnair7$</auth.db.password>
+				<auth.db.sql.query>select user_password from users_gdma2 where username=?</auth.db.sql.query>
+				<auth.db.encoding.algo>SHA-256</auth.db.encoding.algo>
+				<auth.db.driver.class>com.mysql.jdbc.Driver</auth.db.driver.class>
+				
+				<authentication.handler.bean>dbAuthHandler</authentication.handler.bean>
+				<authentication.config.context.resource>dbConfigContext.xml</authentication.config.context.resource>
+				
+			</properties>
+		</profile>
+		
+		<profile>
+			<id>ryanairprod</id>
+			<properties>
+				<cas.server.host.name>10.160.12.160</cas.server.host.name>
+				<cas.server.protocol>http</cas.server.protocol>
+				<cas.server.host.port></cas.server.host.port>
+				
+				<auth.db.url>jdbc:mysql://fr-bi-rdma-rds-prod.cylk8xzbhgqi.eu-west-1.rds.amazonaws.com:3306/rdmaprod?useSSL=false</auth.db.url>
+				<auth.db.user>rdmaprod</auth.db.user>
+				<auth.db.password>4f3nH1e7kUyn</auth.db.password>
+				<auth.db.sql.query>select user_password from users_gdma2 where username=?</auth.db.sql.query>
+				<auth.db.encoding.algo>SHA-256</auth.db.encoding.algo>
+				<auth.db.driver.class>com.mysql.jdbc.Driver</auth.db.driver.class>
+				
+				<authentication.handler.bean>dbAuthHandler</authentication.handler.bean>
+				<authentication.config.context.resource>dbConfigContext.xml</authentication.config.context.resource>
+				
+			</properties>
+		</profile>
+		
+		<profile>
 			<id>test-postgres</id>
 			<properties>
 			
 				<cas.server.host.name>localhost</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.host.port>:443</cas.server.host.port>
 			
 				<auth.db.url>jdbc:postgresql://10.252.220.198:5432/ms-auth-2</auth.db.url>
 				<auth.db.user>postgres</auth.db.user>
@@ -192,7 +259,8 @@
 			<properties>
 			
 				<cas.server.host.name>localhost</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.protocol>https</cas.server.protocol>
+				<cas.server.host.port>:433</cas.server.host.port>
 			
 				<auth.db.url>jdbc:postgresql://10.252.220.198:5432/gdma</auth.db.url>
 				<auth.db.user>postgres</auth.db.user>
@@ -213,7 +281,7 @@
 			<id>dev-vodafone</id>
 			<properties>
 				<cas.server.host.name>localhost</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.host.port>:443</cas.server.host.port>
 
 				<authentication.handler.bean>adAuthenticationHandler</authentication.handler.bean>
 				<authentication.config.context.resource>adConfigContext.xml</authentication.config.context.resource>
@@ -232,7 +300,7 @@
 			<id>test-vodafone</id>
 			<properties>
 				<cas.server.host.name>10.252.220.65</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.host.port>:443</cas.server.host.port>
 
 				<customer>Vodafone Ireland</customer>
 				<customer.url>http://www.vodafone.ie</customer.url>
@@ -248,7 +316,7 @@
 			<id>test</id>
 			<properties>
 				<cas.server.host.name>10.252.220.65</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.host.port>:443</cas.server.host.port>
 
 				<customer>Client Solutions</customer>
 				<customer.url>http://www.as.techdata.eu/clientsolutions/</customer.url>
@@ -259,7 +327,7 @@
 			<id>uat-tmi</id>
 			<properties>
 				<cas.server.host.name>172.16.8.11</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.host.port>:443</cas.server.host.port>
 
 				<customer>Tesco Mobile Ireland</customer>
 				<customer.url>http://www.tescomobile.com</customer.url>
@@ -276,7 +344,7 @@
 			<id>prod-tmi</id>
 			<properties>
 				<cas.server.host.name>172.16.1.20</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.host.port>:443</cas.server.host.port>
 
 				<customer>Tesco Mobile Ireland</customer>
 				<customer.url>http://www.tescomobile.com</customer.url>
@@ -293,7 +361,7 @@
 			<id>musgrave-psq-old</id>
 			<properties>
 				<cas.server.host.name>10.216.2.20</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.host.port>:443</cas.server.host.port>
 				<auth.db.url>jdbc:sqlserver://MRPIAVDBDEV01:1433;database=RDMA;integratedSecurity=true;</auth.db.url>
 				<auth.db.sql.query>select user_password from dbo.users_gdma2 where username=?</auth.db.sql.query>
 				<auth.db.encoding.algo>SHA-1</auth.db.encoding.algo>
@@ -313,7 +381,7 @@
 			<id>musgrave-psq</id>
 			<properties>
 				<cas.server.host.name>applications-psq.musgrave.ie</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.host.port>:443</cas.server.host.port>
 				
 				<!-- Active Directory -->
 				<ad.url>ldap://tradc004.musgravegroup.net</ad.url>
@@ -334,7 +402,7 @@
 			<id>musgrave-prod</id>
 			<properties>
 				<cas.server.host.name>applications.musgrave.ie</cas.server.host.name>
-				<cas.server.host.port>443</cas.server.host.port>
+				<cas.server.host.port>:443</cas.server.host.port>
 
 				<!-- Active Directory -->
 				<ad.url>ldap://tradc004.musgravegroup.net</ad.url>
@@ -370,6 +438,7 @@
 		<cas.version>4.0.0</cas.version>
 
 		<cas.server.host.name>localhost</cas.server.host.name>
+		<cas.server.protocol>https</cas.server.protocol>
 		<cas.server.host.port>443</cas.server.host.port>
 
 		<customer>Client Solutions</customer>
