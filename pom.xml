@@ -452,6 +452,8 @@
 		<!-- Authentication settings -->
 		<authentication.handler.bean>ldapAuthenticationHandler</authentication.handler.bean>
 		<authentication.config.context.resource>ldapConfigContext.xml</authentication.config.context.resource>
+		<!-- <authentication.handler.bean>dbAuthHandler</authentication.handler.bean>
+				<authentication.config.context.resource>dbConfigContext.xml</authentication.config.context.resource> -->
 		
 		<!-- Active Directory -->
 		<ad.url>ldap://dndc.clients.local</ad.url>
@@ -468,13 +470,20 @@
 		<!-- <cas.server.host.name>IEDUBV5NB000393.emea.avnet.com</cas.server.host.name> 
 			<cas.server.host.port>8443</cas.server.host.port> -->
 
-		<!-- GDMA Database assuming SHA1 encoded password is stored in users_gdma2 table -->
+		<!-- GDMA Database assuming SHA1 encoded password is stored in users_gdma2 table
 		<auth.db.url>jdbc:postgresql://localhost/gdma</auth.db.url>
 		<auth.db.user>postgres</auth.db.user>
 		<auth.db.password>password</auth.db.password>
 		<auth.db.sql.query>select user_password from users_gdma2 where username=?</auth.db.sql.query>
 		<auth.db.encoding.algo>SHA-1</auth.db.encoding.algo>
-		<auth.db.driver.class>org.postgresql.Driver</auth.db.driver.class>
+		<auth.db.driver.class>org.postgresql.Driver</auth.db.driver.class> -->
+		
+		<auth.db.url>jdbc:postgresql://10.252.220.198:5432/gdma</auth.db.url>
+				<auth.db.user>postgres</auth.db.user>
+				<auth.db.password>password</auth.db.password>
+				<auth.db.sql.query>select user_password from users_gdma2 where username=?</auth.db.sql.query>
+				<auth.db.encoding.algo>SHA-256</auth.db.encoding.algo>
+				<auth.db.driver.class>org.postgresql.Driver</auth.db.driver.class>
 
 		<repo.id>nexus-repo</repo.id>
 		<repo.release>http://csolnexus2.clients.local/repository/maven-releases</repo.release>
