@@ -438,12 +438,12 @@
             <cas.server.host.port>:443</cas.server.host.port>
 
             <!-- Active Directory -->
-            <ad.url> ldap://BGGWRDC05.bge.ie</ad.url>
-            <ad.domain>GNI</ad.domain>
-            <ad.searchBase>DC=bge,DC=ie</ad.searchBase>
+            <ad.url>ldap://BGGWRDC05.bge.ie</ad.url>
+            <ad.domain>bge.ie</ad.domain>
+			<ad.searchBase>DC=bge,DC=ie</ad.searchBase>
 
              <authentication.handler.bean>adAuthenticationHandler</authentication.handler.bean>
-             <authentication.config.context.resource>adConfigContext.xml</authentication.config.context.resource>
+             <authentication.config.context.resource>alt_adConfigContext.xml</authentication.config.context.resource>
 
             <customer>GNI</customer>
             <customer.url>https://www.gasnetworks.ie</customer.url>
