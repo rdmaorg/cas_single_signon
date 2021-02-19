@@ -502,7 +502,7 @@
 				<cas.server.host.port>80</cas.server.host.port>
 
             <!-- Active Directory -->
-            <ad.url>ldap://KILDCINF01P.kil.kingspan.net</ad.url>
+            <ad.url>ldap://KILDCINF001.kil.kingspan.net</ad.url>
             <ad.domain>KIL</ad.domain>
 				<ad.searchBase>DC=Kil,DC=kingspan,DC=net</ad.searchBase>
 				
