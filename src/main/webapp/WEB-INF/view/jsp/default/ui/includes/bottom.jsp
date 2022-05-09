@@ -25,7 +25,6 @@
       <footer class="text-center">
         <div id="copyright">
           <%-- <p>Copyright &copy; Avnet 2015. All rights reserved.</p> --%>
-          <p><spring:message code="copyright" /></p>
           <p>Powered by <a href="http://www.jasig.org/cas">Jasig Central Authentication Service <%=org.jasig.cas.CasVersion.getVersion()%></a></p>
         </div>
       </footer>
